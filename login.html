@@ -3,106 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oniz.collection</title> 
+    <title>Login Page</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-image: url(img/bg1.gif);
-            background-size: cover;  
-            background-repeat: no-repeat;  
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            margin: 0;
+            background-color: #FFEEF4;
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.963);  
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            box-sizing: border-box;  
+            text-align: center;
+            width: 300px;
         }
 
         h2 {
-            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
         }
 
-        input[type="text"],
-        input[type="password"],
-        input[type="email"] {
-            width: calc(100% - 20px);   
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .input-container {
+            margin-bottom: 15px;
         }
 
-        input[type="submit"] {
-            background-color: #FF90BC;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
+        .input-container input {
             width: 100%;
+            padding: 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-size: 16px;
         }
 
-        input[type="submit"]:hover {
-            background-color: #FFEEF4;
-            color: black;
+        .forgot-password {
+            font-size: 12px;
+            color: #FF90BC;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
-        .toggle {
-            text-align: center;
-            margin-top: 10px;
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .login {
+            background-color: #000;
+        }
+
+        .register {
+            background-color: #000;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .divider span {
+            font-size: 12px;
+            color: #333;
+            padding: 0 10px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #333;
+        }
+
+        p {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-btn {
+            width: 48%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .google {
+            background-color: #A7D129;
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div id="login-form">
-        <h2>Login</h2>
-        <form action="home.html" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Login">
+    <div class="container">
+        <h2>SIGN IN</h2>
+        <form>
+            <div class="input-container">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <button type="button" class="btn login" onclick="window.location.href='home.html'">LOGIN</button>
+            <button type="button" class="btn register" onclick="window.location.href='register.html'">REGISTER</button>
+            <div class="divider">
+                <span>OR</span>
+            </div>
+            <p>SIGN IN WITH...</p>
+            <div class="social-buttons">
+                <button class="social-btn facebook">Facebook</button>
+                <button class="social-btn google">Google</button>
+            </div>
         </form>
-        <div class="toggle">
-            <p>Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
-        </div>
     </div>
-
-    <div id="register-form" style="display: none;">
-        <h2>Register</h2>
-        <form action="/login.html" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" value="Register">
-        </form>
-        <div class="toggle">
-            <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
-        </div>
-    </div>
-</div>
-
-<script>
-    function toggleForms() {
-        const loginForm = document.getElementById('login-form');
-        const registerForm = document.getElementById('register-form');
-        if (loginForm.style.display === 'none') {
-            loginForm.style.display = 'block';
-            registerForm.style.display = 'none';
-        } else {
-            loginForm.style.display = 'none';
-            registerForm.style.display = 'block';
-        }
-    }
-</script>
-
 </body>
 </html>
