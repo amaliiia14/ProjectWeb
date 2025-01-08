@@ -249,7 +249,6 @@ section{
     padding: 20px;
 }
 
-
 .box-product img {
     width: 100%;
     height: auto;
@@ -437,7 +436,7 @@ section{
 .contact{
     display: flex;
     flex-direction: column;
-    row-gap: 8px;
+    row-gap: 10px;
 }
 
 .contact h3{
@@ -448,9 +447,10 @@ section{
     display: flex;
     align-items: center;
     color: white;
+    font-size: 19px;
 }
 
-.contact i{
+.contact span i{
     font-size: 20px;
 }
 
@@ -660,8 +660,8 @@ section{
 .btn-add {
     display: inline-block;
     margin-top: 15px;
-    background-color: #333;
-    color: #fff;
+    background-color: #FF90BC;
+    color: black;
     padding: 8px 8px; 
     text-align: center;
     text-decoration: none;
@@ -672,6 +672,10 @@ section{
     cursor: pointer;
 }
 
+.btn-add:hover{
+    background-color: #F2BED1;
+    color: #F9F5F6;
+}
 .row-detail h3 {
     font-size: 18px;
     margin: 20px 0 5px;
